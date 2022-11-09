@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       myValues:
-        description: 'My name is Michael'
+        description: 'Input Values'
 
 permissions:
   contents: read
