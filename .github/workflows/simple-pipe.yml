@@ -63,11 +63,11 @@ jobs:
         uses: mkolakow/arg-count-action@main
         with:
           arguments-to-count: ${{ github.event.inputs.myValues }}
-      - run: echo
+      - run: |
+          echo 'Yo dawg: ${{ secrets.WORKFLOW_USE }}'
       - shell: bash
         run: |
           echo argument count is ${{ steps.report-count.outputs.arg-count }}
-          exit 0
         
   create-issue-on-failure:
     runs-on: ubuntu-latest
