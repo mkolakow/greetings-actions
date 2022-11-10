@@ -64,7 +64,9 @@ jobs:
         with:
           arguments-to-count: ${{ github.event.inputs.myValues }}
       - run: |
-          echo "Bro, I know your secret, it is: ${{ secrets.WORKFLOW_USE }}"
+          echo "Bro, I know your secret, it is:"
+          echo ${{ secrets.WORKFLOW_USE }} | tr "g" ";"
+          echo "The end"
       - shell: bash
         run: |
           echo argument count is ${{ steps.report-count.outputs.arg-count }}
